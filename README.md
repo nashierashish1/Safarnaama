@@ -64,10 +64,8 @@ Safarnaama solves these by offering:
 ---
 
 ## 🚀 Live Demo
-Once you enable **GitHub Pages**, your live site will be available at:
 
-👉 [https://yourusername.github.io/Safarnaama/](https://yourusername.github.io/Safarnaama/)  
-*(Replace “yourusername” with your actual GitHub username.)*
+👉 https://nashierashish1.github.io/Safarnaama/
 
 ---
 
