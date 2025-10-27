@@ -70,8 +70,11 @@ Safarnaama solves these by offering:
 ---
 
 🧑‍💻 Developer
+
 👤 Ashish Nashier
+
 🎓 Electronics & Communication Engineering (ECE), First Year
+
 💡 Passionate about web development, AI integration, and smart travel solutions.
 
 “Safarnaama is more than a website — it’s a journey connecting travelers with the joy of exploration.”
