@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Safarnaama - Explore. Connect. Travel Smarter.</title>
+<style>
+  * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif;}
+  body {background: #EEAECA;
+    background: radial-gradient(circle,rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%); color: #222; overflow-x: hidden; scroll-behavior: smooth;}
+  header {
+    position:fixed; width: 100%; top: 0; left: 0; z-index: 100;
+    background: linear-gradient(135deg, #0078d7, #00bfa5);
+    color: #132020; padding: 1rem 3rem;
+    display:flex; justify-content: space-between; align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0);
+  }
+  header h1 {font-size: 1.7rem; letter-spacing: 1px;}
+  nav a {background-image: linear-gradient( 109.3deg,  rgba(168,230,207,1) 16.1%, rgba(6,99,190,1) 89.3% );
+    color: #3e0909; margin-left: 1.5rem; text-decoration: none;
+    font-weight: 500; transition: 0s;
+  }
+  nav a:hover {text-decoration: underline;}
+  section {
+    padding: 6rem 2rem; max-width: 1200px; margin: auto;
+    opacity: 1; transform: translateY(60px);
+    transition: all 0s ease;
+  }
+  section.active {opacity: 1; transform: translateY(0);}
+  .hero {
+    background: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/92/75/7c/caption.jpg?w=2200&h=1200&s=1&cx=1059&cy=707&chk=v1_0f1c894e5ff7ff690cc4') center/cover no-repeat;
+    color: #ffffff; text-align: center; padding: 10rem 2rem;
+  }
+  .hero h2 {font-size: 3rem; margin-bottom: 1rem; text-shadow: 2px 2px 6px rgba(0,0,0,0);}
+  .hero p {font-size: 1.2rem; max-width: 800px; margin: auto; line-height: 1.6;}
+  .section-title {text-align: center; margin-bottom: 2rem; font-size: 2rem; color: #0078d7;}
+  .card {
+    background: #ffffff; padding: 1.5rem; border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: 0s;
+  }
+  .card:hover {transform: translateY(-5px); box-shadow: 0 6px 14px rgba(0,0,0,0.2);}
+  .card img {width: 100%; border-radius: 12px; height: 160px; object-fit: cover; margin-bottom: 1rem;}
+  .grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;
+  }
+  button {
+    background: #00bfa5; color: rgb(240, 240, 240); border: none;
+    padding: 0.7rem 1.5rem; border-radius: 25px;
+    cursor: pointer; margin-top: 1rem; font-size: 1rem;
+  }
+  button:hover {background: #009b85;}
+  footer {background: #0078d7; color: #fff; text-align: center; padding: 1.5rem; font-size: 0.9rem;}
+  @media (max-width: 768px) {
+    header {flex-direction: column; text-align: center; gap: 0.5rem;}
+    .hero h2 {font-size: 2.3rem;}
+  }
+</style>
+</head>
+<body>
+<header>
+<h1 class="glow-text">SAFARNAAMA</h1>
+<nav style="text-align:center; padding: 1rem;">
+  <a href="#home" style="background-color:#0a3164; color:rgb(0, 0, 0); padding:8px 12px; margin:0 5px; text-decoration:none; border-radius:5px;">Home</a>
+  <a href="#destinations" style="background-color:#0f3b86; color:rgb(0, 0, 0); padding:8px 12px; margin:0 5px; text-decoration:none; border-radius:5px;">Destinations</a>
+  <a href="#packages" style="background-color:#134fb1; color:rgb(0, 0, 0); padding:8px 12px; margin:0 5px; text-decoration:none; border-radius:5px;">Packages</a>
+  <a href="#hotels" style="background-color:#2256b1; color:rgb(0, 0, 0); padding:8px 12px; margin:0 5px; text-decoration:none; border-radius:5px;">Hotels</a>
+  <a href="#buses" style="background-color:#2e66af; color:rgb(0, 0, 0); padding:8px 12px; margin:0 5px; text-decoration:none; border-radius:5px;">Bus</a>
+  <a href="#teerth" style="background-color:#2d6ba6; color:rgb(0, 0, 0); padding:8px 12px; margin:0 5px; text-decoration:none; border-radius:5px;">Chalo Teerth Sthal</a>
+  <a href="#events" style="background-color:#377dd3; color:rgb(0, 0, 0); padding:8px 12px; margin:0 5px; text-decoration:none; border-radius:5px;">Events</a>
+  <a href="#blogs" style="background-color:#3d83c8; color:rgb(0, 0, 0); padding:8px 12px; margin:0 5px; text-decoration:none; border-radius:5px;">Pralekhan</a>
+  <a href="#chatbot" style="background-color:#618cbc; color:rgb(0, 0, 0); padding:8px 12px; margin:0 5px; text-decoration:none; border-radius:5px;">Ghumakkad Baba</a>
+  <a href="#weather" style="background-color:#46a4c3; color:rgb(0, 0, 0); padding:8px 12px; margin:0 5px; text-decoration:none; border-radius:5px;">Weather</a>
+  <a href="#about" style="background-color:#62a6bb; color:rgb(0, 0, 0); padding:8px 12px; margin:0 5px; text-decoration:none; border-radius:5px;">About</a>
+</nav>
+</header>
+<!-- HOME -->
+<section id="home" class="hero active">
+  <h2>SAFARNAAMA.</h2>
+  <p>Safarnaama makes exploring the world simple, smart, and affordable — your all-in-one travel companion.</p>
+</section>
+<!-- DESTINATIONS -->
+<section id="destinations">
+  <h2 class="section-title">Popular Destinations</h2>
+  <div class="grid">
+    <div class="card"><img src="https://manalitourism.co.in/images/places-to-visit/headers/old-manali-snow-point-header-manali-tourism.jpg.jpg"><h3>Manali</h3><p>Sky above, earth below, peace within.</p></div>
+    <div class="card"><img src="https://media2.thrillophilia.com/images/photos/000/039/882/original/1513670399_arambol_beach.jpg?w=753&h=450&dpr=1.5"><h3>Goa</h3><p>Goa - Where the sky meets the Sea-Sunsets;</p></div>
+    <div class="card"><img src="https://img.avianexperiences.com/trek/cd0b2426-d245-4c1d-b292-f52379ae2983"><h3>Jaipur</h3><p>The Pink City - Where royalty meets heritage.</p></div>
+    <div class="card"><img src="https://s7ap1.scene7.com/is/image/incredibleindia/top-station-munnar-kerala-1-attr-hero?qlt=82&ts=1726672844426"><h3>Kerala</h3><p>God’s own country - Natural beauty and cultural identity. </p></div>
+  </div>
+</section>
+<!-- 🧳 PACKAGES -->
+<section id="packages">
+  <h2 class="section-title">Exclusive Travel Packages</h2>
+  <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; padding: 1rem;">
+    <!-- 🌄 MANALI -->
+    <div class="card" style="border:1px solid #ddd; border-radius:10px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.1); text-align:center; background:#fff;">
+      <img src="https://discoverkullumanali.in/wp-content/uploads/2024/03/Discover-Kullu-Manali-Home-Page-banner-1140x530.jpg" alt="Manali Package" style="width:100%; height:180px; object-fit:cover;">
+      <h3>Manali 3 Days / 2 Nights</h3>
+      <p><strong>₹15,000 per person</strong><br>Includes: Meals 🍽 | Hotel 🏨 | Sightseeing 🚌</p>
+      <p>Explore Solang Valley, Hadimba Temple, and Mall Road while enjoying cozy mountain views.</p>
+      <button onclick="alert('Manali Package booked successfully! 🎒')" style="background:#0078d7; color:white; border:none; padding:0.5rem 1rem; border-radius:8px; cursor:pointer;">Book Now</button>
+    </div>
+    <!-- 🏞️ KASOL -->
+    <div class="card" style="border:1px solid #ddd; border-radius:10px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.1); text-align:center; background:#fff;">
+      <img src="https://img.avianexperiences.com/attraction/77249b07-ecdf-42e9-afe7-be64ea4286c6" alt="Kasol Package" style="width:100%; height:180px; object-fit:cover;">
+      <h3>Kasol 4 Days / 3 Nights</h3>
+      <p><strong>₹17,000 per person</strong><br>Includes: Meals 🍽 | Hotel 🏨 | Sightseeing 🚌</p>
+      <p>Relax by the Parvati River, trek to Kheerganga, and enjoy the serene Himalayan vibes.</p>
+      <button onclick="alert('Kasol Package booked successfully! 🎒')" style="background:#0078d7; color:white; border:none; padding:0.5rem 1rem; border-radius:8px; cursor:pointer;">Book Now</button>
+    </div>
+    <!-- 🏰 JODHPUR -->
+    <div class="card" style="border:1px solid #ddd; border-radius:10px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.1); text-align:center; background:#fff;">
+      <img src="https://images.contentstack.io/v3/assets/blt06f605a34f1194ff/blt720954ecfafb8b67/689d929fa21355a02e4fd07e/BCC-2024-EXPLORER-JODHPUR-THINGS-TO-DO-AT-NIGHT-HEADER_MOBILE.jpg?format=webp&auto=avif&quality=60&crop=4%3A3&width=1440" alt="Jodhpur Package" style="width:100%; height:180px; object-fit:cover;">
+      <h3>Jodhpur 3 Days / 2 Nights</h3>
+      <p><strong>₹14,000 per person</strong><br>Includes: Meals 🍽 | Hotel 🏨 | Sightseeing 🚌</p>
+      <p>Discover the Blue City, visit Mehrangarh Fort, and experience royal Rajasthani culture.</p>
+      <button onclick="alert('Jodhpur Package booked successfully! 🎒')" style="background:#0078d7; color:white; border:none; padding:0.5rem 1rem; border-radius:8px; cursor:pointer;">Book Now</button>
+    </div>
+    <!-- 🕉️ UJJAIN -->
+    <div class="card" style="border:1px solid #ddd; border-radius:10px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.1); text-align:center; background:#fff;">
+      <img src="https://api.trekpanda.in/uploads/mahakaleshwar%20mandir%20ujjain%20front%20view.jpg" alt="Ujjain Package" style="width:100%; height:180px; object-fit:cover;">
+      <h3>Ujjain 2 Days / 1 Night</h3>
+      <p><strong>₹8,000 per person</strong><br>Includes: Meals 🍽 | Hotel 🏨 | Sightseeing 🚌</p>
+      <p>Visit the sacred Mahakaleshwar Temple and explore ancient ghats along the Shipra River.</p>
+      <button onclick="alert('Ujjain Package booked successfully! 🎒')" style="background:#0078d7; color:white; border:none; padding:0.5rem 1rem; border-radius:8px; cursor:pointer;">Book Now</button>
+    </div>
+    <!-- 🌆 BHOPAL -->
+    <div class="card" style="border:1px solid #ddd; border-radius:10px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.1); text-align:center; background:#fff;">
+      <img src="https://www.indianholiday.com/wordpress/wp-content/uploads/2024/09/Bhopal-Tourism.jpg" alt="Bhopal Package" style="width:100%; height:180px; object-fit:cover;">
+      <h3>Bhopal 3 Days / 2 Nights</h3>
+      <p><strong>₹12,000 per person</strong><br>Includes: Meals 🍽 | Hotel 🏨 | Sightseeing 🚌</p>
+      <p>Experience the charm of the City of Lakes with visits to Upper Lake, Sanchi, and Bhimbetka.</p>
+      <button onclick="alert('Bhopal Package booked successfully! 🎒')" style="background:#0078d7; color:white; border:none; padding:0.5rem 1rem; border-radius:8px; cursor:pointer;">Book Now</button>
+    </div>
+ <!-- 🌆 SHIMLA -->
+    <div class="card" style="border:1px solid #ddd; border-radius:10px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.1); text-align:center; background:#fff;">
+      <img src="https://etimg.etb2bimg.com/photo/96968714.cms" alt="Shimla Package" style="width:100%; height:180px; object-fit:cover;">
+      <h3>Shimla 3 Days / 2 Nights</h3>
+      <p><strong>₹13,500 per person</strong><br>Includes: Meals 🍽 | Hotel 🏨 | Sightseeing 🚌</p>
+      <p>Visit solan, kufri, chail and mall Road</p>
+      <button onclick="alert('SHIMLA Package booked successfully! 🎒')" style="background:#0078d7; color:white; border:none; padding:0.5rem 1rem; border-radius:8px; cursor:pointer;">Book Now</button>
+    </div>
+  </div>
+  <!-- 🏨 HOTELS SECTION -->
+<section id="hotels">
+  <h2 class="section-title">🏨 Best Hotels for Your Stay</h2>
+  <p style="text-align:center; font-size:1.1rem; margin-bottom:2rem;">
+    Handpicked hotels offering comfort, luxury, and perfect views — choose your stay wisely!
+  </p>
+  <div class="grid" style="display:grid; gap:2rem;">
+    <!-- 🌄 MANALI HOTELS -->
+    <div class="card" style="background:#fff; border-radius:15px; padding:1rem;">
+      <h3 style="text-align:center; color:#0078d7;">Hotels in Manali</h3>
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem;">
+        <div class="card"><img src="https://www.glampingclub.in/images/uploads/398/6572d08db3346_Luxury-Dome-(4).jpg"><h4>Snow Valley Resorts ❄️</h4><p>Cozy stay with mountain view near Hadimba Temple.</p></div>
+        <div class="card"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/e0/89/ef/the-winters-of-winterfell.jpg?w=900&h=500&s=1"><h4>Apple Country Resort 🍎</h4><p>Luxury resort amidst apple orchards in Old Manali.</p></div>
+        <div class="card"><img src="https://q-xx.bstatic.com/xdata/images/hotel/840x460/446223006.jpg?k=0e84a5e229ef4de84b7ca02214e20eba7fa1a988915f6c44b9727e7369017128&o="><h4>The Himalayan 🏔️</h4><p>Castle-style resort with scenic views and spa.</p></div>
+        <div class="card"><img src="https://images.trvl-media.com/lodging/31000000/30060000/30056300/30056226/fc4a7feb.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill"><h4>Larisa Resort 🌲</h4><p>Peaceful luxury with private balconies and bonfires.</p></div>
+      </div>
+    </div>
+    <!-- 🏔️ SHIMLA HOTELS -->
+    <div class="card" style="background:#fff; border-radius:15px; padding:1rem;">
+      <h3 style="text-align:center; color:#0078d7;">Hotels in Shimla</h3>
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem;">
+        <div class="card"><img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/533663827.jpg?k=6cf6348e3c1cba89ed8cbf1a564e036ff3c77c70d09c4d0755608593eb3c1c59&o=&hp=1"><h4>Radisson Hotel Shimla 🏨</h4><p>Luxury hotel with panoramic hill views near Mall Road.</p></div>
+        <div class="card"><img src="https://www.hireacamp.com/api/external/image?name=uploads/b35422f1e7824b1fa71dc6b0dc190520.jpeg&size=3840x3840&q=75"><h4>Wildflower Hall 🌸</h4><p>Oberoi resort with spa, infinity pool, and cedar forest views.</p></div>
+        <div class="card"><img src="https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_267,q_40,w_400/hotelier-images/ee/e9/bff90ce8879284dd98ee7501463bc1337f2de043fa442878c2287de8299d.jpeg"><h4>Hotel Willow Banks 🌳</h4><p>Elegant stay right on Mall Road with cafe and bar.</p></div>
+        <div class="card"><img src="https://staybook.in/_next/image?url=https%3A%2F%2Fimages.staybook.in%2FShimla-Nature-Ville%2FShimla-Nature-Ville_facade_2.jpg&w=640&q=75"><h4>Clarkes Hotel 🏰</h4><p>Colonial-style heritage hotel, a true Shimla classic.</p></div>
+      </div>
+    </div>
+    <!-- 🏞️ KASOL HOTELS -->
+    <div class="card" style="background:#fff; border-radius:15px; padding:1rem;">
+      <h3 style="text-align:center; color:#0078d7;">Hotels in Kasol</h3>
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem;">
+        <div class="card"><img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/571121792.jpg?k=6c5829e6efb1534d05e1b29000a3faa069c33736c72d796605e88565ef8c2636&o=&hp=1"><h4>Parvati Kuteer 🌿</h4><p>Wooden cottages beside Parvati River.</p></div>
+        <div class="card"><img src="https://media1.thrillophilia.com/filestore/meggm14x2sml200hn3961l8pb2qg_63dbxoyeljh1hrbht1to42ab505s_Screenshot_1.jpg?w=400&dpr=2"><h4>The Hosteller Kasol 🎒</h4><p>Perfect for backpackers — comfy dorms and chill zone.</p></div>
+        <div class="card"><img src="https://rukmini-ct.flixcart.com/w_2048,f_auto,q_auto/ct-hotel-images/places/hotels/cms/4700/4700491/images/image_4700491_1b03610c-d648-4a90-884a-b3c1472944a2.jpeg"><h4>Brick & Wood Cafe & Stay 🧱</h4><p>Trendy boutique stay near the main market.</p></div>
+        <div class="card"><img src="https://www.offbeatstays.in//storage/750/conversions/obs-123-kasol-himachal-pradesh-geodesic-domes-OffBeat-Stays-7c0058b292fc17cef03a2592dd9e6ebe2-slider.jpg"><h4>PerkUp Hostel 🏕️</h4><p>Budget-friendly stay with mountain-view terrace.</p></div>
+      </div>
+    </div>
+    <!-- 🏰 JODHPUR HOTELS -->
+    <div class="card" style="background:#fff; border-radius:15px; padding:1rem;">
+      <h3 style="text-align:center; color:#0078d7;">Hotels in Jodhpur</h3>
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem;">
+        <div class="card"><img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/679507011.jpg?k=51a19ec49fe8c2b050a25f5c256049c040fe1edc893935f59a32d64a363e6f67&o=&hp=1"><h4>Umaid Bhawan Palace 👑</h4><p>Royal heritage stay — grandeur at its finest.</p></div>
+        <div class="card"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2f/73/10/d7/exterior.jpg?w=1200&h=-1&s=1"><h4>RAAS Jodhpur 🏰</h4><p>Luxury boutique hotel overlooking Mehrangarh Fort.</p></div>
+        <div class="card"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2c/20/5d/2e/celsius-the-pool.jpg?w=1200&h=-1&s=1"><h4>Ajit Bhawan 🌇</h4><p>Elegant rooms blending tradition with modern comfort.</p></div>
+        <div class="card"><img src="https://www.andbeyond.com/wp-content/uploads/sites/5/Main-Pool-Area-at-Raas.jpg"><h4>Devi Bhawan 🌿</h4><p>Peaceful garden hotel with Rajput charm.</p></div>
+      </div>
+    </div>
+    <!-- 🕉️ UJJAIN HOTELS -->
+    <div class="card" style="background:#fff; border-radius:15px; padding:1rem;">
+      <h3 style="text-align:center; color:#0078d7;">Hotels in Ujjain</h3>
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem;">
+        <div class="card"><img src="https://pix10.agoda.net/hotelImages/65668894/1018314226/410d05d41bce33b6fdffc7e9d8e010e8.jpg?ce=0&s=414x232"><h4>Anjushree Resort 🌺</h4><p>Luxurious stay with pool and vegetarian dining.</p></div>
+        <div class="card"><img src="https://pix10.agoda.net/hotelImages/65668894/0/d791bd2ddd77a11f9f13d3f4786eb1eb.jpg?ce=0&s=702x392"><h4>Hotel Imperial 🏨</h4><p>Close to Mahakaleshwar Temple, premium amenities.</p></div>
+        <div class="card"><img src="https://media.easemytrip.com/media/Hotel/SHL-2306797952862/Common/CommonTwtQb3.png"><h4>Hotel Kalpana Palace 🕉️</h4><p>Budget stay for pilgrims near the ghats.</p></div>
+        <div class="card"><img src="https://www.mptourism.com/images/accomodation/acomod-banner.jpg"><h4>Shree Balaji Palace 🌟</h4><p>Modern rooms with in-house dining options.</p></div>
+      </div>
+    </div>
+    <!-- 🌆 BHOPAL HOTELS -->
+    <div class="card" style="background:#fff; border-radius:15px; padding:1rem;">
+      <h3 style="text-align:center; color:#0078d7;">Hotels in Bhopal</h3>
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem;">
+        <div class="card"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/4e/33/7f/jehan-numa-palace-hotel.jpg?w=1200&h=-1&s=1"><h4>Noor-Us-Sabah Palace 👑</h4><p>Royal heritage hotel with lake view.</p></div>
+        <div class="card"><img src="https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/524502138.jpg?k=e66e12f6df2c772a2f3d7e54858fa78ba8deb7b3a3dadc6a50cbabb0cb52176f&o="><h4>Jehan Numa Palace 🏰</h4><p>Blend of colonial architecture and luxury comfort.</p></div>
+        <div class="card"><img src="https://images.trvl-media.com/lodging/117000000/116730000/116726000/116725963/b2390b5f.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill"><h4>Courtyard by Marriott 🌆</h4><p>Premium hotel near DB Mall with modern amenities.</p></div>
+        <div class="card"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2c/9d/54/cb/facade.jpg?w=900&h=500&s=1"><h4>The Fern Residency 🌿</h4><p>Eco-friendly stay ideal for families and couples.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 🚌 BUS TRAVEL SECTION -->
+<section id="buses">
+  <h2 class="section-title">🚌 Popular Bus Routes & Operators</h2>
+  <p style="text-align:center; font-size:1.1rem; margin-bottom:2rem;">
+    Book your road journeys easily with India’s top-rated bus travel operators. Comfortable, reliable, and scenic rides await! 🌄
+  </p>
+  <div class="grid" style="display:grid; gap:2rem;">
+    <!-- 🔴 REDBUS -->
+    <div class="card" style="background:#fff; border-radius:15px; padding:1rem;">
+      <h3 style="text-align:center; color:#d32f2f;">RedBus 🚍</h3>
+      <ul style="list-style:none; padding:0; margin-top:1rem; line-height:1.8;">
+        <li>🛣️ Delhi → Manali</li>
+        <li>🛣️ Delhi → Shimla</li>
+        <li>🛣️ Delhi → Jaipur</li>
+        <li>🛣️ Mumbai → Goa</li>
+        <li>🛣️ Pune → Lonavala</li>
+        <li>🛣️ Chandigarh → Kasol</li>
+        <li>🛣️ Bangalore → Coorg</li>
+      </ul>
+      <button onclick="alert('Redirecting to RedBus booking... 🚌')" style="background:#d32f2f; color:white;">Book with RedBus</button>
+    </div>
+    <!-- 🟢 ZINGBUS -->
+    <div class="card" style="background:#fff; border-radius:15px; padding:1rem;">
+      <h3 style="text-align:center; color:#00bfa5;">ZingBus 🚐</h3>
+      <ul style="list-style:none; padding:0; margin-top:1rem; line-height:1.8;">
+        <li>🛣️ Delhi → Manali</li>
+        <li>🛣️ Delhi → Kasol</li>
+        <li>🛣️ Delhi → Jodhpur</li>
+        <li>🛣️ Chandigarh → Shimla</li>
+        <li>🛣️ Gurgaon → Rishikesh</li>
+        <li>🛣️ Lucknow → Agra</li>
+        <li>🛣️ Jaipur → Delhi</li>
+      </ul>
+      <button onclick="alert('Redirecting to ZingBus booking... 🚌')" style="background:#00bfa5; color:white;">Book with ZingBus</button>
+    </div>
+    <!-- 🟡 INTERCITY SMARTBUS -->
+    <div class="card" style="background:#fff; border-radius:15px; padding:1rem;">
+      <h3 style="text-align:center; color:#ff9800;">Intercity SmartBus 🚌</h3>
+      <ul style="list-style:none; padding:0; margin-top:1rem; line-height:1.8;">
+        <li>🛣️ Delhi → Dehradun</li>
+        <li>🛣️ Delhi → Amritsar</li>
+        <li>🛣️ Delhi → Lucknow</li>
+        <li>🛣️ Jaipur → Udaipur</li>
+        <li>🛣️ Indore → Bhopal</li>
+        <li>🛣️ Delhi → Agra</li>
+        <li>🛣️ Ahmedabad → Rajkot</li>
+      </ul>
+      <button onclick="alert('Redirecting to Intercity SmartBus booking... 🚌')" style="background:#ff9800; color:white;">Book with SmartBus</button>
+    </div>
+    <!-- 🟣 FLIXBUS -->
+    <div class="card" style="background:#fff; border-radius:15px; padding:1rem;">
+      <h3 style="text-align:center; color:#673ab7;">FlixBus 🌍</h3>
+      <ul style="list-style:none; padding:0; margin-top:1rem; line-height:1.8;">
+        <li>🛣️ Delhi → Chandigarh</li>
+        <li>🛣️ Delhi → Jaipur</li>
+        <li>🛣️ Mumbai → Pune</li>
+        <li>🛣️ Bangalore → Chennai</li>
+        <li>🛣️ Hyderabad → Vijayawada</li>
+        <li>🛣️ Indore → Bhopal</li>
+        <li>🛣️ Nagpur → Aurangabad</li>
+      </ul>
+      <button onclick="alert('Redirecting to FlixBus booking... 🚌')" style="background:#673ab7; color:white;">Book with FlixBus</button>
+    </div>
+    <!-- 🔵 LAXMI HOLIDAYS -->
+    <div class="card" style="background:#fff; border-radius:15px; padding:1rem;">
+      <h3 style="text-align:center; color:#0078d7;">Laxmi Holidays 🏔️</h3>
+      <ul style="list-style:none; padding:0; margin-top:1rem; line-height:1.8;">
+        <li>🛣️ Delhi → Manali</li>
+        <li>🛣️ Delhi → Shimla</li>
+        <li>🛣️ Delhi → Dharamshala</li>
+        <li>🛣️ Delhi → Kasol</li>
+        <li>🛣️ Chandigarh → Manali</li>
+        <li>🛣️ Delhi → McLeodganj</li>
+        <li>🛣️ Delhi → Rishikesh</li>
+      </ul>
+      <button onclick="alert('Redirecting to Laxmi Holidays booking... 🚌')" style="background:#0078d7; color:white;">Book with Laxmi Holidays</button>
+    </div>
+  </div>
+</section>
+<!-- 🕉️ CHALO TEERTH STHAL -->
+<section id="teerth">
+  <h2 class="section-title">🕉️ Chalo Teerth Sthal</h2>
+  <p style="text-align:center; font-size:1.1rem; margin-bottom:2rem;">
+    Embark on a spiritual journey across India’s most sacred destinations with our divine travel packages. ✨
+  </p>
+  <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; padding: 1rem;">
+    <!-- 🛕 CHAAR DHAAM PACKAGE -->
+    <div class="card" style="border:1px solid #ddd; border-radius:15px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.1); text-align:center; background:#fff;">
+      <img src="https://dharmikbharatyatra.com/wp-content/uploads/2025/05/CHARDHAM-1.jpg" alt="Chaar Dhaam Yatra" style="width:100%; height:180px; object-fit:cover;">
+      <h3>Chaar Dhaam Yatra</h3>
+      <p><strong>₹10,000 per person</strong><br>Includes: Meals 🍽 | Stay 🏨 | Darshan 🚩 | Travel 🚌</p>
+      <p>Embark on the sacred journey to <strong>Kedarnath</strong>, <strong>Badrinath</strong>, <strong>Gangotri</strong>, and <strong>Yamunotri</strong> — the ultimate path to divinity.</p>
+      <button onclick="alert('Chaar Dhaam Package booked successfully! 🕉️')" style="background:linear-gradient(135deg,#ff5722,#e91e63); color:white; border:none; padding:0.7rem 1.2rem; border-radius:8px; cursor:pointer;">Book Now</button>
+    </div>
+    <!-- 🌊 KUMBH STHAL PACKAGE -->
+    <div class="card" style="border:1px solid #ddd; border-radius:15px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.1); text-align:center; background:#fff;">
+      <img src="https://bhaktvatsal-s3.s3.ap-south-1.amazonaws.com/uploads/442ac4d20ce645610ebb0cb627883925.webp" alt="Kumbh Sthal Yatra" style="width:100%; height:180px; object-fit:cover;">
+      <h3>Kumbh Sthal Yatra</h3>
+      <p><strong>₹12,000 per person</strong><br>Includes: Meals 🍽 | Stay 🏨 | Ritual Assistance 🕉 | Sightseeing 🚍</p>
+      <p>Take a holy dip at <strong>Ujjain</strong>, <strong>Nashik</strong>, <strong>Haridwar</strong>, and <strong>Prayagraj</strong> — where faith meets the divine Ganga.</p>
+      <button onclick="alert('Kumbh Sthal Package booked successfully! 🌊')" style="background:linear-gradient(135deg,#3f51b5,#2196f3); color:white; border:none; padding:0.7rem 1.2rem; border-radius:8px; cursor:pointer;">Book Now</button>
+    </div>
+    <!-- 🔱 YATRA SAATHI PACKAGE -->
+    <div class="card" style="border:1px solid #ddd; border-radius:15px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.1); text-align:center; background:#fff;">
+      <img src="https://odishatourism.gov.in/content/dam/tourism/home/experience/rath-yatra/2025/RathYatra-2025-1.JPG" alt="Yatra Saathi Package" style="width:100%; height:180px; object-fit:cover;">
+      <h3>Yatra Saathi</h3>
+      <p><strong>₹30,000 per person</strong><br>Includes: Helicopter Option 🚁 | Meals 🍽 | Stay 🏨 | Travel 🚐</p>
+      <p>Join this divine expedition to <strong>Amarnath</strong>, <strong>Bijli Mahadev</strong>, <strong>Shrikhand Mahadev</strong>, and <strong>Kinnar Kailash</strong> — the path to the abode of Lord Shiva. 🔱</p>
+      <button onclick="alert('Yatra Saathi Package booked successfully! 🔱')" style="background:linear-gradient(135deg,#9c27b0,#673ab7); color:white; border:none; padding:0.7rem 1.2rem; border-radius:8px; cursor:pointer;">Book Now</button>
+    </div>
+  </div>
+</section>
+<!-- EVENTS -->
+<section id="events">
+  <h2 class="section-title">Community Events</h2>
+  <div class="grid">
+    <div class="card"><img src="https://s3.india.com/wp-content/uploads/2024/08/Capture-Stunning-Shots-At-Coorgs-Hidden-Photography-Gems.jpg"><h3>Recent Event</h3><p>Manali Sneh Sammelan</p></div>
+    <div class="card"><img src="https://captureatrip-cms-storage.s3.ap-south-1.amazonaws.com/Kanchenjunga_Hill_0d700566b9.jpg"><h3>Ongoing Event</h3><p>Kedarkanth trekk - Chalo trekk karey saathiyo</p></div>
+    <div class="card"><img src="https://s7ap1.scene7.com/is/image/incredibleindia/ajanta-caves-chhatrapati-sambhaji-nagar-maharashtra-attr-hero-2?qlt=82&ts=1727010576169"><h3>Upcoming</h3><p>Ujjain - Mahakal ke paas</p></div>
+  </div>
+</section>
+<!-- BLOGS BUTTON -->
+<section style="text-align:center; margin:3rem 0;">
+  <button id="show-blogs-btn" style="
+    background: linear-gradient(135deg, #0078d7, #00bfa5);
+    color: white;
+    padding: 1.2rem 2.5rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 700;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+  ">
+    Pralekhan ✍
+  </button>
+</section>
+<!-- BLOGS SECTION -->
+<section id="blogs" style="display:none;">
+  <h2 class="section-title">Pralekhan ✍</h2>
+  <p style="text-align:center;">A space for travelers to share stories, photos, and adventures. Read and write your own blogs here!</p>
+  <div class="grid" style="margin-top:2rem;">
+    <div class="card">
+      <img src="https://lp-cms-production.imgix.net/2021-01/GettyRF_450207051.jpg?auto=compress&format=auto&fit=crop&q=50&w=1200&h=800">
+      <h3>HUMSAFAR EVEREST-by Neeraj Musafir</h3>
+      <p>Mount Everest world's highest peak........</p>
+    </div>
+    <div class="card">
+      <img src="https://s7ap1.scene7.com/is/image/incredibleindia/2-mehrangarh-fort-jodhpur-rajasthan-city-hero?qlt=82&ts=1726660925514">
+      <h3>GUMRAAH RAAHI-by Manish Vashisht</h3>
+      <p>In year 2019 I went......</p>
+    </div>
+  </div>
+</section>
+<script>
+  const blogsBtn = document.getElementById('show-blogs-btn');
+  const blogsSection = document.getElementById('blogs');
+  blogsBtn.addEventListener('click', () => {
+    if (blogsSection.style.display === 'none' || blogsSection.style.display === '') {
+      blogsSection.style.display = 'block';
+      blogsSection.scrollIntoView({behavior: "smooth"});
+    } else {
+      blogsSection.style.display = 'none';
+    }
+  });
+  // Hover effect for the button
+  blogsBtn.addEventListener('mouseover', () => {
+    blogsBtn.style.transform = 'scale(1.1)';
+    blogsBtn.style.boxShadow = '0 8px 20px rgba(0,0,0,0.4)';
+  });
+  blogsBtn.addEventListener('mouseout', () => {
+    blogsBtn.style.transform = 'scale(1)';
+    blogsBtn.style.boxShadow = '0 6px 15px rgba(0,0,0,0.3)';
+  });
+</script>
+<!-- 💬 FLOATING CHAT TOGGLE BUTTON (TOP RIGHT) -->
+<button id="chat-toggle" style="
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  background: linear-gradient(135deg, #0078d7, #00bfa5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  z-index: 201;
+  animation: floatButton 3s ease-in-out infinite;
+  transition: all 0.3s ease;
+">💬
+</button>
+<!-- 🧳 GHUMAKKAD BABA CHATBOX -->
+<section id="chatbot" style="
+  text-align:center;
+  position:fixed;
+  top:100px;
+  right:35px;
+  width:320px;
+  background:#00bfa5;
+  color:white;
+  padding:1rem;
+  border-radius:15px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.4);
+  z-index:200;
+  display:none;
+">
+  <h2 class="section-title" style="color:white; font-size:1.3rem;">Meet Ghumakkad Baba 🧳</h2>
+  <p style="font-size:0.9rem;">Ask Baba anything about your next trip!</p>
+  <!-- Chat display area -->
+  <div id="chat-box" style="background:white; color:black; height:160px; overflow-y:auto; padding:0.5rem; border-radius:10px; text-align:left; margin-bottom:0.5rem;"></div>
+  <!-- Input for user -->
+  <div style="display:flex; align-items:center;">
+    <input id="chat-input" type="text" placeholder="Type your question..." style="flex:1; padding:0.5rem; border-radius:10px; border:none; outline:none;">
+    <button id="send-btn" style="width:50px; padding:0.5rem; margin-left:5px; border:none; border-radius:10px; background:#0078d7; color:white; cursor:pointer;">➤</button>
+  </div>
+</section>
+<style>
+  /* 🌀 Floating animation for the button */
+  @keyframes floatButton {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  /* 🌟 Floating button style */
+  #chat-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #0078d7, #00bfa5);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    animation: floatButton 2s ease-in-out infinite;
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  /* 🌟 Hover effect for button */
+  #chat-toggle:hover {
+    box-shadow: 0 10px 25px rgba(0,191,165,0.6);
+    transform: scale(1.1);
+  }
+  /* 🌟 Baba title above button */
+  #baba-title {
+    position: fixed;
+    bottom: 80px; /* place it above the button */
+    right: 20px;
+    color: #ffeb3b;
+    font-size: 1.3rem;
+    font-weight: bold;
+    font-family: 'Cursive', 'Brush Script MT', sans-serif;
+    text-shadow: 0 0 8px #ffeb3b, 0 0 15px #f57c00;
+    animation: sparkle 2s infinite alternate;
+    z-index: 1000;
+    text-align: center;
+  }
+  @keyframes sparkle {
+    0% { text-shadow: 0 0 8px #ffeb3b, 0 0 15px #f57c00; }
+    50% { text-shadow: 0 0 12px #fff176, 0 0 20px #ff9800; }
+    100% { text-shadow: 0 0 8px #ffeb3b, 0 0 15px #f57c00; }
+  }
+</style>
+<script>
+  const chatToggle = document.getElementById('chat-toggle');
+  const chatBox = document.getElementById('chat-box');
+  const chatInput = document.getElementById('chat-input');
+  const sendBtn = document.getElementById('send-btn');
+  const chatbot = document.getElementById('chatbot');
+  // Toggle chatbot visibility
+  chatToggle.addEventListener('click', () => {
+    if (chatbot.style.display === 'none' || chatbot.style.display === '') {
+      chatbot.style.display = 'block';
+      chatToggle.innerText = '✖'; // Change icon to close
+      chatToggle.style.background = 'linear-gradient(135deg, #e91e63, #ff5722)';
+    } else {
+      chatbot.style.display = 'none';
+      chatToggle.innerText = '💬'; // Change back to chat icon
+      chatToggle.style.background = 'linear-gradient(135deg, #0078d7, #00bfa5)';
+    }
+  });
+  // Simulated Baba responses
+  const responses = {
+    "hello": "Hello traveler! 🧳 Where would you like to go?",
+    "manali": "Manali is amazing! You can explore Solang Valley and Hadimba Temple.",
+    "shimla": "Shimla is cozy! Don't miss Kufri and Mall Road.",
+    "kasol": "Kasol is perfect for chill vibes and treks! Don't miss Kheerganga.",
+    "trip": "Tell me your preferences: adventure, relaxation, or culture?",
+    "default": "Hmm 🤔, Baba is not sure. Can you rephrase?"
+  };
+  function getBabaResponse(message) {
+    message = message.toLowerCase();
+    for (let key in responses) {
+      if (message.includes(key)) return responses[key];
+    }
+    return responses["default"];
+  }
+  function sendMessage() {
+    const userMsg = chatInput.value.trim();
+    if (!userMsg) return;
+    // Display user message
+    chatBox.innerHTML += `<p style="color:blue;"><strong>You:</strong> ${userMsg}</p>`;
+    // Get Baba's response
+    const babaMsg = getBabaResponse(userMsg);
+    chatBox.innerHTML += `<p style="color:green;"><strong>Baba:</strong> ${babaMsg}</p>`;
+    // Auto scroll
+    chatBox.scrollTop = chatBox.scrollHeight;
+    chatInput.value = "";
+    chatInput.focus();
+  }
+  sendBtn.addEventListener('click', sendMessage);
+  chatInput.addEventListener('keypress', e => {
+    if (e.key === 'Enter') sendMessage();
+  });
+</script>
+<!-- WEATHER -->
+<section id="weather" style="text-align:center;">
+  <h2 class="section-title">🌤 Travel Weather & Atmosphere</h2>
+  <p>Check current temperatures across India's favorite travel spots!</p>
+  <div style="
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 1.5rem; 
+    margin-top: 2rem;
+  ">
+    <div style="
+      background: linear-gradient(135deg, #0078d7, #00bfa5);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 15px;
+      width: 200px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    ">
+      <h3>Manali 🏔️</h3>
+      <p style="font-size:1.3rem; font-weight:600;">2°C</p>
+      <p>❄️ Cold & Snowy</p>
+    </div>
+    <div style="
+      background: linear-gradient(135deg, #ff9800, #f44336);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 15px;
+      width: 200px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    ">
+      <h3>Goa 🏖️</h3>
+      <p style="font-size:1.3rem; font-weight:600;">28°C</p>
+      <p>🌤️ Sunny & Humid</p>
+    </div>
+    <div style="
+      background: linear-gradient(135deg, #8e24aa, #5e35b1);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 15px;
+      width: 200px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    ">
+      <h3>Jaipur 🏰</h3>
+      <p style="font-size:1.3rem; font-weight:600;">24°C</p>
+      <p>☀️ Warm & Clear</p>
+    </div>
+    <div style="
+      background: linear-gradient(135deg, #03a9f4, #0288d1);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 15px;
+      width: 200px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    ">
+      <h3>Shimla 🌄</h3>
+      <p style="font-size:1.3rem; font-weight:600;">6°C</p>
+      <p>🌥️ Chilly Breeze</p>
+    </div>
+    <div style="
+      background: linear-gradient(135deg, #43a047, #1b5e20);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 15px;
+      width: 200px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    ">
+      <h3>Kerala 🌿</h3>
+      <p style="font-size:1.3rem; font-weight:600;">26°C</p>
+      <p>🌦️ Humid & Cloudy</p>
+    </div>
+  </div>
+  <p style="margin-top:2rem; font-size:0.95rem; color:#333;">
+    *Temperatures are approximate — updated as per latest reports.
+  </p>
+</section>
+<!-- ABOUT -->
+<section id="about">
+  <h2 class="section-title">About Safarnaama</h2>
+  <p style="text-align:center; max-width:900px; margin:auto;">
+    Safarnaama brings travelers together through affordable, smart travel planning.  
+    Powered by <strong>Ghumakkad Baba</strong>, an AI assistant that curates trips based on destination, budget, and travel style.  
+    <br><br>
+    Explore community events, share your experiences in Pralekhan, and check live weather to pack perfectly.  
+    <br><br>
+    <em>“Travel made simple, smart, and soulful.”</em>
+  </p>
+</section>
+<footer>
+  <p>© 2025 Safarnaama | Designed by Tech Redemption</p>
+</footer>
+</body>
+</html>
