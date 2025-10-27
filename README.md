@@ -69,19 +69,6 @@ Safarnaama solves these by offering:
 
 ---
 
-## 🧩 How to Run Locally
-
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/Safarnaama.git
-
-# Open the folder
-cd Safarnaama
-
-# Launch the app
-open safarnaama1.html
-Or simply double-click on safarnaama1.html after downloading.
-
 🧑‍💻 Developer
 👤 Ashish Nashier
 🎓 Electronics & Communication Engineering (ECE), First Year
@@ -89,7 +76,7 @@ Or simply double-click on safarnaama1.html after downloading.
 
 “Safarnaama is more than a website — it’s a journey connecting travelers with the joy of exploration.”
 
-🪄 Future Improvements
+🪄 Future Improvements:-
 🧭 Add user login & saved trips
 
 💬 Expand Ghumakkad Baba with chat memory and better AI replies
@@ -97,4 +84,3 @@ Or simply double-click on safarnaama1.html after downloading.
 📷 Integrate photo uploads in the Pralekhan blog section
 
 📅 Add booking and event calendar integration
-
